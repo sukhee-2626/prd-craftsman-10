@@ -1,12 +1,52 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import PRDInput from "@/components/PRDInput";
+import PRDOutput from "@/components/PRDOutput";
+import { generatePRD } from "@/lib/generatePRD";
+
+interface PRDSection {
+  emoji: string;
+  title: string;
+  content: string;
+  color: string;
+}
+
+interface GeneratedPRD {
+  productName: string;
+  sections: PRDSection[];
+}
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [generatedPRD, setGeneratedPRD] = useState<GeneratedPRD | null>(null);
+
+  const handleGenerate = async (idea: string) => {
+    setIsLoading(true);
+    try {
+      const prd = await generatePRD(idea);
+      setGeneratedPRD(prd);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <PRDInput onGenerate={handleGenerate} isLoading={isLoading} />
+        {generatedPRD && (
+          <PRDOutput 
+            productName={generatedPRD.productName} 
+            sections={generatedPRD.sections} 
+          />
+        )}
+      </main>
+      <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
+        <p>PRD Generator — Transform your ideas into professional documents</p>
+      </footer>
     </div>
   );
 };
