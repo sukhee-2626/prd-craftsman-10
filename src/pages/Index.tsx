@@ -3,29 +3,29 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PRDInput from "@/components/PRDInput";
 import PRDOutput from "@/components/PRDOutput";
-import { generatePRD } from "@/lib/generatePRD";
-
-interface PRDSection {
-  emoji: string;
-  title: string;
-  content: string;
-  color: string;
-}
-
-interface GeneratedPRD {
-  productName: string;
-  sections: PRDSection[];
-}
+import { generatePRD, GeneratedPRD } from "@/lib/generatePRD";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [generatedPRD, setGeneratedPRD] = useState<GeneratedPRD | null>(null);
+  const { toast } = useToast();
 
   const handleGenerate = async (idea: string) => {
     setIsLoading(true);
     try {
       const prd = await generatePRD(idea);
       setGeneratedPRD(prd);
+      toast({
+        title: "PRD Generated!",
+        description: `Successfully created PRD for "${prd.productName}"`,
+      });
+    } catch (error) {
+      toast({
+        title: "Generation Failed",
+        description: error instanceof Error ? error.message : "Failed to generate PRD",
+        variant: "destructive",
+      });
     } finally {
       setIsLoading(false);
     }
