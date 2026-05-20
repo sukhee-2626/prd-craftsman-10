@@ -1,73 +1,109 @@
-# Welcome to your Lovable project
+# PRD Craftsman – AI PRD Prompt Generator
 
-## Project info
+PRD Craftsman is an AI-powered Product Requirements Document (PRD) Prompt Generator that helps developers, product managers, founders, and students quickly create structured PRD prompts for projects.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Generate detailed product requirement prompts instantly for apps, SaaS products, websites, AI tools, startups, and software ideas.
 
-## How can I edit this code?
+## Live Demo
 
-There are several ways of editing your application.
+🌐 Try the app: https://prd-craftsman-10.lovable.app
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- AI-powered PRD prompt generation
+- Structured product requirement templates
+- Fast and simple interface
+- Helps define product scope and requirements
+- Suitable for startups, developers, product managers, and students
+- Easy prompt customization for different project types
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+This project is built using:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Getting Started
 
-Follow these steps:
+### Prerequisites
+
+Make sure you have installed:
+
+- Node.js
+- npm
+
+### Installation
+
+Clone the repository:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone <YOUR_GITHUB_REPO_URL>
+```
 
-# Step 2: Navigate to the project directory.
+Navigate to the project folder:
+
+```sh
 cd <YOUR_PROJECT_NAME>
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+Install dependencies:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```sh
+npm install
+```
+
+Start the development server:
+
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will start with hot reload enabled.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Use Cases
 
-**Use GitHub Codespaces**
+PRD Craftsman can help you generate prompts for:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- SaaS applications
+- Mobile apps
+- Web applications
+- AI products
+- Startup MVP planning
+- Product requirement documentation
+- Feature planning
 
-## What technologies are used for this project?
+## Project Structure
 
-This project is built with:
+```txt
+src/
+├── components/
+├── pages/
+├── hooks/
+├── styles/
+└── utils/
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+You can deploy this project using platforms such as:
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- Vercel
+- Netlify
+- GitHub Pages
 
-## Can I connect a custom domain to my Lovable project?
+## Contributing
 
-Yes, you can!
+Contributions, ideas, and improvements are welcome.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Fork the repository
+2. Create a new branch
+3. Make changes
+4. Submit a pull request
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## License
+
+This project is open-source and available under the MIT License.
